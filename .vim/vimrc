@@ -1,0 +1,13 @@
+" vimrc file for vim configuration, 25-04-18, Prakash Acharya
+
+" use 4 spaces for tab
+set expandtab
+set tabstop=4
+
+" insert four spaces when giving > command
+set shiftwidth=4
+set softtabstop=4
+
+" set line number on the left and set the width to 1
+set number
+set numberwidth=1
