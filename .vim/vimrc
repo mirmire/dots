@@ -1,4 +1,4 @@
-" vimrc file for vim configuration, 02-02-19, Prakash Acharya
+" vimrc file for vim configuration, 16-02-2019, Prakash Acharya
 
 " use 4 spaces for tab
 set expandtab
@@ -16,3 +16,6 @@ set numberwidth=1
 syntax on
 set modeline
 set modelines=5
+
+" set tab completion to something similar to bash
+set wildmode=longest,list
