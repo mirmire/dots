@@ -1,4 +1,7 @@
-" vimrc file for vim configuration, 16-02-2019, Prakash Acharya
+" vimrc file for vim configuration, 18-02-2019, Prakash Acharya
+
+" set imcompatible with vi
+set nocompatible
 
 " use 4 spaces for tab
 set expandtab
@@ -6,7 +9,7 @@ set tabstop=4
 
 " insert four spaces when giving > command
 set shiftwidth=4
-set softtabstop=4
+
 
 " set line number on the left and set the width to 1
 set number
@@ -19,3 +22,22 @@ set modelines=5
 
 " set tab completion to something similar to bash
 set wildmode=longest,list
+
+" When searching try to be smart about cases
+set ignorecase
+set smartcase
+
+" show matching bracket
+set showmatch
+
+" set terminal title
+set title
+
+" no bells
+set novisualbell
+set noerrorbells
+
+" show incremental search pattern
+set incsearch
+set hls
+highlight Search ctermfg=yellow ctermbg=black
