@@ -40,4 +40,11 @@ set noerrorbells
 " show incremental search pattern
 set incsearch
 set hls
-highlight Search ctermfg=yellow ctermbg=black
+highlight Search cterm=None ctermfg=yellow ctermbg=black
+
+" remember more commands
+set history=500
+
+"map up and down key for Ctrl-p and Ctrl-n
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
