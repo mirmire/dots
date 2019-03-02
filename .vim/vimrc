@@ -48,3 +48,6 @@ set history=500
 "map up and down key for Ctrl-p and Ctrl-n
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+
+" add common suffixes for gf command
+set suffixesadd=.py
