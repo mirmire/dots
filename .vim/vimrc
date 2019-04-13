@@ -51,3 +51,10 @@ cnoremap <C-n> <Down>
 
 " add common suffixes for gf command
 set suffixesadd=.py
+
+" make scrolling easier
+set scrolloff=3
+
+" make tabs and trailing whitespace visible
+set list
+set listchars=trail:·,tab:>-
