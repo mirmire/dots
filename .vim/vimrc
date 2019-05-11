@@ -11,8 +11,9 @@ set tabstop=4
 set shiftwidth=4
 
 
-" set line number on the left and set the width to 1
+" set relative line number and set the minimum width to 1
 set number
+set relativenumber
 set numberwidth=1
 
 " enable syntax highlighting and set modeline
