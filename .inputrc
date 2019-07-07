@@ -1,1 +1,17 @@
 set completion-ignore-case on
+
+# show which mode is currently active
+set show-mode-in-prompt on
+set vi-ins-mode-string "_"
+set vi-cmd-mode-string ":"
+
+# make control-l clear screen in both modes
+$if mode=vi
+
+    set keymap vi-insert
+    Control-l: clear-screen
+
+    set keymap vi-command
+    Control-l: clear-screen
+
+$endif
