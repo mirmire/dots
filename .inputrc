@@ -1,9 +1,16 @@
 set completion-ignore-case on
 
+# set readline to vi
+set editing-mode vi
+
 # show which mode is currently active
 set show-mode-in-prompt on
 set vi-ins-mode-string "_"
 set vi-cmd-mode-string ":"
+
+# let's colour the completion
+set colored-completion-prefix on
+set colored-stats on
 
 # make control-l clear screen in both modes
 $if mode=vi
