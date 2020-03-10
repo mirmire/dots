@@ -62,4 +62,8 @@ set listchars=tab:→\ ,trail:•,nbsp:•
 " string to put at the start of the wrapped lines
 let &showbreak="↪\ "
 
-set colorcolumn=80
+if expand('%:t') == "COMMIT_EDITMSG"
+    set colorcolumn=73
+else
+    set colorcolumn=80
+endif
