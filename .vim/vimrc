@@ -58,4 +58,4 @@ set scrolloff=3
 
 " make tabs and trailing whitespace visible
 set list
-set listchars=trail:·,tab:>-
+set listchars=tab:→\ ,trail:•,nbsp:•
