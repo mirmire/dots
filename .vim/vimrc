@@ -67,3 +67,12 @@ if expand('%:t') == "COMMIT_EDITMSG"
 else
     set colorcolumn=80
 endif
+
+" use ctlr-l to mute search highlighting
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+" to prevent .c files from automatically changing formatoptions to croql
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+
+" use file-specific settings from ftplugin/ directory
+filetype plugin on
