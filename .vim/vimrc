@@ -62,6 +62,7 @@ set listchars=tab:→\ ,trail:•,nbsp:•
 " string to put at the start of the wrapped lines
 let &showbreak="↪\ "
 
+highlight ColorColumn ctermbg=darkred
 if expand('%:t') == "COMMIT_EDITMSG"
     set colorcolumn=73
 else
