@@ -17,5 +17,5 @@ man() {
     command man "$@"
 }
 
-export PROMPT_COMMAND="history -a; history -n;${PROMPT_COMMAND}"
+export PROMPT_COMMAND="${PROMPT_COMMAND:-:};history -a; history -n;"
 export PYTHONSTARTUP="$HOME/.pythonrc"
