@@ -1,4 +1,4 @@
-" vimrc file for vim configuration, 18-02-2019, Prakash Acharya
+" vimrc file for vim configuration, 19-04-2020, Prakash Acharya
 
 " set imcompatible with vi
 set nocompatible
@@ -77,3 +77,22 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 " use file-specific settings from ftplugin/ directory
 filetype plugin on
+
+execute pathogen#infect()
+
+" syntastic related config {{
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_id_checkers = 1
+
+let g:syntastic_markdown_checkers = ['proselint']
+let g:syntastic_python_checkers = ['pylint', 'flake8']
+let g:syntastic_shell_checkers = ['shellcheck']
+let g:syntastic_vim_checkers = ['vint']
+let g:syntastic_yaml_checkers = ['yamllint']
+" }}
