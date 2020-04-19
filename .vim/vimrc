@@ -1,4 +1,5 @@
 " vimrc file for vim configuration, 19-04-2020, Prakash Acharya
+scriptencoding utf-8
 
 " set imcompatible with vi
 set nocompatible
@@ -60,10 +61,10 @@ set list
 set listchars=tab:→\ ,trail:•,nbsp:•
 
 " string to put at the start of the wrapped lines
-let &showbreak="↪\ "
+let &showbreak='↪\ '
 
 highlight ColorColumn ctermbg=darkred
-if expand('%:t') == "COMMIT_EDITMSG"
+if expand('%:t') ==# 'COMMIT_EDITMSG'
     set colorcolumn=73
 else
     set colorcolumn=80
@@ -71,9 +72,6 @@ endif
 
 " use ctlr-l to mute search highlighting
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-
-" to prevent .c files from automatically changing formatoptions to croql
-autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 " use file-specific settings from ftplugin/ directory
 filetype plugin on
