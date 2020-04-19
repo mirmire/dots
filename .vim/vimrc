@@ -73,8 +73,12 @@ endif
 " use ctlr-l to mute search highlighting
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
-" use file-specific settings from ftplugin/ directory
-filetype plugin on
+augroup vimrc
+    autocmd!
+augroup END
+
+autocmd vimrc FileType yaml setlocal tabstop=2 shiftwidth=2
+autocmd vimrc FileType groovy setlocal colorcolumn=100
 
 execute pathogen#infect()
 
