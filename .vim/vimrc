@@ -1,9 +1,6 @@
 " vimrc file for vim configuration, 19-04-2020, Prakash Acharya
 scriptencoding utf-8
 
-" set imcompatible with vi
-set nocompatible
-
 " use 4 spaces for tab
 set expandtab
 set tabstop=4
