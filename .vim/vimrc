@@ -97,10 +97,9 @@ let g:syntastic_yaml_checkers = ['yamllint']
 " }}
 
 " use folds
+set foldcolumn=1
 set foldmethod=indent
 set nofoldenable
-set foldcolumn=1
-set foldminlines=2
 highlight Folded ctermbg=grey ctermfg=black
 highlight FoldColumn ctermbg=grey ctermfg=black
 
