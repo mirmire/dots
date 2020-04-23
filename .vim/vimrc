@@ -1,4 +1,4 @@
-" vimrc file for vim configuration, 19-04-2020, Prakash Acharya
+" vimrc file for vim configuration, 23-04-2020, Prakash Acharya
 scriptencoding utf-8
 
 " use 4 spaces for tab
@@ -95,3 +95,15 @@ let g:syntastic_shell_checkers = ['shellcheck']
 let g:syntastic_vim_checkers = ['vint']
 let g:syntastic_yaml_checkers = ['yamllint']
 " }}
+
+" use folds
+set foldmethod=indent
+set nofoldenable
+set foldcolumn=1
+set foldminlines=2
+highlight Folded ctermbg=grey ctermfg=black
+highlight FoldColumn ctermbg=grey ctermfg=black
+
+" toggle fold with space
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
