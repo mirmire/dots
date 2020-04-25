@@ -7,7 +7,12 @@ data.location=~/.task
 include /usr/share/taskwarrior/dark-violets-256.theme
 color.calendar.holiday=yellow inverse
 
-alias.burndown=burndown.daily
+alias.bd=burndown.daily
+alias.cl=context long
+alias.cm=context medium
+alias.cn=context new
+alias.cr=context ref
+alias.cs=context short
 
 include ~/.task/holidays.fi-FI.rc
 calendar.holidays=full
@@ -29,8 +34,12 @@ report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +P
 uda.goal.type=string
 uda.goal.label=Goal
 uda.goal.values=short,medium,long
-context.short=goal:short
-context.medium=goal:medium
-context.long=goal:long
 uda.goal.default=short
+
+# contexts
 context=short
+context.long=goal:long
+context.medium=goal:medium
+context.new=+new
+context.ref=+ref
+context.short=goal:short -new -ref
