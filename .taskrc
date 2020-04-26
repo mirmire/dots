@@ -40,3 +40,11 @@ context.medium=goal:medium
 context.ref=+ref
 context.short=goal:short -ref
 context.wait=+wait
+
+urgency.active.coefficient=5
+urgency.annotations.coefficient=0
+urgency.blocked.coefficient=-2
+urgency.blocking.coefficient=4
+urgency.due.coefficient=8
+urgency.scheduled.coefficient=3
+urgency.tags.coefficient=0
