@@ -2,7 +2,8 @@
 if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
     GIT_PROMPT_ONLY_IN_REPO=0
     GIT_PROMPT_THEME=Custom
-    source $HOME/.bash-git-prompt/gitprompt.sh
+    # shellcheck disable=SC1090
+    source "$HOME/.bash-git-prompt/gitprompt.sh"
 fi
 
 # taken from Arch Linux Wiki page
@@ -19,3 +20,4 @@ man() {
 
 export PROMPT_COMMAND="${PROMPT_COMMAND:-:};history -a; history -n;"
 export PYTHONSTARTUP="$HOME/.pythonrc"
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
