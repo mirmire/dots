@@ -3,6 +3,9 @@
 data.location=~/.task
 
 include /usr/share/taskwarrior/dark-violets-256.theme
+color.burndown.done=on rgb010
+color.burndown.pending=on rgb410
+color.burndown.started=on rgb154
 color.calendar.holiday=yellow inverse
 
 alias.bd=burndown.daily
