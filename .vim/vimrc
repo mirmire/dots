@@ -81,11 +81,25 @@ autocmd vimrc FileType groovy setlocal colorcolumn=100
 
 execute pathogen#infect()
 
-" syntastic related config {{
+set noruler
+set laststatus=2
+
+set statusline=
+set statusline+=%1*\ %t%*                 " file name (tail) of the buffer
+set statusline+=%2*\ %y%*                 " type of the file in the buffer
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+set statusline+=%3*\ %=%m%r%*             " separation and modified + RO flag
+set statusline+=%4*\ %c%*                 " column number
+set statusline+=%2*\ %l/%L%*              " line number/no. of lines in buffer
 
+highlight User1 ctermfg=black ctermbg=green
+highlight User2 ctermfg=black ctermbg=yellow
+highlight User3 ctermfg=black ctermbg=lightblue
+highlight User4 ctermfg=white ctermbg=magenta
+
+" syntastic related config {{
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_aggregate_errors = 1
