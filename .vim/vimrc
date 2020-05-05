@@ -1,4 +1,4 @@
-" vimrc file for vim configuration, 03-05-2020, Prakash Acharya
+" vimrc file for vim configuration, 05-05-2020, Prakash Acharya
 scriptencoding utf-8
 
 " use 4 spaces for tab
@@ -60,7 +60,7 @@ set list
 set listchars=tab:→\ ,trail:•,nbsp:•
 
 " string to put at the start of the wrapped lines
-let &showbreak='↪\ '
+let &showbreak='↪ '
 
 highlight ColorColumn ctermbg=darkred
 if expand('%:t') ==# 'COMMIT_EDITMSG'
