@@ -37,7 +37,7 @@ set noerrorbells
 
 " show incremental search pattern
 set incsearch
-set hls
+set hlsearch
 
 highlight Search cterm=None ctermfg=yellow ctermbg=black
 highlight Visual cterm=reverse ctermbg=NONE
@@ -113,13 +113,6 @@ let g:syntastic_shell_checkers = ['shellcheck']
 let g:syntastic_vim_checkers = ['vint']
 let g:syntastic_yaml_checkers = ['yamllint']
 " }}
-
-" use folds
-set foldcolumn=1
-set foldmethod=indent
-set nofoldenable
-highlight Folded ctermbg=grey ctermfg=black
-highlight FoldColumn ctermbg=grey ctermfg=black
 
 " toggle fold with space
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
