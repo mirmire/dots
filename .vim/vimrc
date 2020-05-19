@@ -72,6 +72,10 @@ endif
 " use ctlr-l to mute search highlighting
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
+" load all packages in the start directory and generate helptags
+packloadall
+silent! helptags ALL
+
 augroup vimrc
     autocmd!
 augroup END
@@ -80,15 +84,12 @@ autocmd vimrc FileType yaml setlocal tabstop=2 shiftwidth=2
 autocmd vimrc FileType groovy setlocal colorcolumn=100
 autocmd vimrc BufNewFile,BufRead *.py setlocal keywordprg=pydoc3
 
-execute pathogen#infect()
-
 set noruler
 set laststatus=2
 
 set statusline=
 set statusline+=%1*\ %t%*                 " file name (tail) of the buffer
 set statusline+=%2*\ %y%*                 " type of the file in the buffer
-set statusline+=%5*\ %{SyntasticStatuslineFlag()}%*
 set statusline+=%4*\ %=%<%{getcwd()}%*    " separation and pwd
 set statusline+=%3*\ %m%r%*               " modified flag and read only flag
 set statusline+=%4*\ %c%*                 " column number
@@ -100,19 +101,12 @@ highlight User3 ctermfg=black ctermbg=lightblue
 highlight User4 ctermfg=white ctermbg=magenta
 highlight User5 ctermfg=white ctermbg=magenta cterm=bold
 
-" syntastic related config {{
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_id_checkers = 1
-
-let g:syntastic_markdown_checkers = ['proselint']
-let g:syntastic_python_checkers = ['pylint', 'flake8']
-let g:syntastic_shell_checkers = ['shellcheck']
-let g:syntastic_vim_checkers = ['vint']
-let g:syntastic_yaml_checkers = ['yamllint']
-" }}
+" ALE related config
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " toggle fold with space
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
