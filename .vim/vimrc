@@ -5,6 +5,12 @@ scriptencoding utf-8
 set expandtab
 set tabstop=4
 
+set nobackup                    " default, do not keep backup but
+set writebackup                 " create one before writing and remove after
+
+set ttymouse=xterm2             " so that mouse works even when under tmux
+set mouse=a                     " enable mouse on all modes
+
 " insert four spaces when giving > command
 set shiftwidth=4
 
@@ -13,13 +19,19 @@ set number
 set relativenumber
 set numberwidth=1
 
+" viminfo
+set viminfofile=~/.vim/viminfo
+set viminfo='50,<1000,s100,%100
+
 " enable syntax highlighting and set modeline
 syntax on
 set modeline
 set modelines=5
 
 " set tab completion to something similar to bash
-set wildmode=longest,list
+set wildmenu
+highlight WildMenu ctermbg=yellow ctermfg=black
+set wildmode=longest:full,list:full
 
 " When searching try to be smart about cases
 set ignorecase
@@ -43,14 +55,18 @@ highlight Search cterm=None ctermfg=yellow ctermbg=black
 highlight Visual cterm=reverse ctermbg=NONE
 
 " remember more commands
-set history=500
+set history=5000
+
+let mapleader = '-'
+nnoremap <leader>b :ls<cr>:b<space>
+nnoremap <leader>v :ls<cr>:vertical rightbelow sb<space>
+nnoremap <leader>s :ls<cr>:sb<space>
 
 "map up and down key for Ctrl-p and Ctrl-n
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-" add common suffixes for gf command
-set suffixesadd=.py
+set path+=**
 
 " make scrolling easier
 set scrolloff=3
@@ -90,6 +106,8 @@ set laststatus=2
 set statusline=
 set statusline+=%1*\ %t%*                 " file name (tail) of the buffer
 set statusline+=%2*\ %y%*                 " type of the file in the buffer
+set statusline+=%6*\ buf:%n%*             " buffer number
+set statusline+=%4*\ win:%{winnr()}%*     " window number
 set statusline+=%4*\ %=%<%{getcwd()}%*    " separation and pwd
 set statusline+=%3*\ %m%r%*               " modified flag and read only flag
 set statusline+=%4*\ %c%*                 " column number
@@ -100,6 +118,7 @@ highlight User2 ctermfg=black ctermbg=yellow
 highlight User3 ctermfg=black ctermbg=lightblue
 highlight User4 ctermfg=white ctermbg=magenta
 highlight User5 ctermfg=white ctermbg=magenta cterm=bold
+highlight User6 ctermfg=cyan ctermbg=white cterm=bold
 
 " ALE related config
 let g:ale_lint_on_text_changed = 'never'
