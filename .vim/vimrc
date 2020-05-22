@@ -1,9 +1,9 @@
-" vimrc file for vim configuration, 06-05-2020, Prakash Acharya
+" vimrc file for vim configuration, 22-05-2020, Prakash Acharya
 scriptencoding utf-8
 
-" use 4 spaces for tab
 set expandtab
-set tabstop=4
+set tabstop=4                   " use 4 spaces for tab
+set shiftwidth=4
 
 set nobackup                    " default, do not keep backup but
 set writebackup                 " create one before writing and remove after
@@ -11,50 +11,36 @@ set writebackup                 " create one before writing and remove after
 set ttymouse=xterm2             " so that mouse works even when under tmux
 set mouse=a                     " enable mouse on all modes
 
-" insert four spaces when giving > command
-set shiftwidth=4
-
-" set relative line number on the left and set the width to 1
 set number
 set relativenumber
-set numberwidth=1
+set numberwidth=1               " minimum width for the number column
 
-" viminfo
 set viminfofile=~/.vim/viminfo
 set viminfo='50,<1000,s100,%100
 
-" enable syntax highlighting and set modeline
 syntax on
 set modeline
-set modelines=5
+set modelines=5                 " top or bottom 5 lines for modeline i.e # vim:
 
-" set tab completion to something similar to bash
-set wildmenu
+set wildmenu                    " menu style command line completion
 highlight WildMenu ctermbg=yellow ctermfg=black
 set wildmode=longest:full,list:full
 
-" When searching try to be smart about cases
 set ignorecase
 set smartcase
-
-" show matching bracket
 set showmatch
 
-" set terminal title
 set title
 
-" no bells
 set novisualbell
 set noerrorbells
 
-" show incremental search pattern
-set incsearch
+set incsearch                   " show incremental search pattern
 set hlsearch
 
 highlight Search cterm=None ctermfg=yellow ctermbg=black
 highlight Visual cterm=reverse ctermbg=NONE
 
-" remember more commands
 set history=5000
 
 let mapleader = '-'
@@ -62,21 +48,17 @@ nnoremap <leader>b :ls<cr>:b<space>
 nnoremap <leader>v :ls<cr>:vertical rightbelow sb<space>
 nnoremap <leader>s :ls<cr>:sb<space>
 
-"map up and down key for Ctrl-p and Ctrl-n
+" map up and down key for Ctrl-p and Ctrl-n
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
 set path+=**
 
-" make scrolling easier
-set scrolloff=3
+set scrolloff=3                 " keep 3 top and bottom line when scrolling
 
-" make tabs and trailing whitespace visible
 set list
 set listchars=tab:→\ ,trail:•,nbsp:•
-
-" string to put at the start of the wrapped lines
-let &showbreak='↪ '
+let &showbreak='↪ '             " wrapped lines
 
 highlight ColorColumn ctermbg=darkred
 if expand('%:t') ==# 'COMMIT_EDITMSG'
@@ -87,10 +69,6 @@ endif
 
 " use ctlr-l to mute search highlighting
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-
-" load all packages in the start directory and generate helptags
-packloadall
-silent! helptags ALL
 
 augroup vimrc
     autocmd!
@@ -120,11 +98,9 @@ highlight User4 ctermfg=white ctermbg=magenta
 highlight User5 ctermfg=white ctermbg=magenta cterm=bold
 highlight User6 ctermfg=cyan ctermbg=white cterm=bold
 
-" ALE related config
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
-
 let g:ale_echo_msg_format = '[%linter%] %code%: %s [%severity%]'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -133,5 +109,7 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
-" if empty, backspacing is not allowed
-set backspace=indent,eol,start
+set backspace=indent,eol,start    " backspacing works for these
+
+packloadall                       " load all packages in the start directory
+silent! helptags ALL              " generate helptags
