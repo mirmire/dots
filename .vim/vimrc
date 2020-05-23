@@ -23,6 +23,7 @@ set modeline
 set modelines=5                 " top or bottom 5 lines for modeline i.e # vim:
 
 set wildmenu                    " menu style command line completion
+set wildignorecase
 highlight WildMenu ctermbg=yellow ctermfg=black
 set wildmode=longest:full,list:full
 
@@ -124,6 +125,8 @@ let g:ale_echo_msg_format = '[%linter%] %code%: %s [%severity%]'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+let g:gutentags_file_list_command = 'rg --files'
+
 " toggle fold with space
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
@@ -132,6 +135,8 @@ set backspace=indent,eol,start    " backspacing works for these
 
 set grepprg=rg\ --vimgrep
 set grepformat=%f:%l:%c:%m,%f:%l:%m
+
+execute pathogen#infect()
 
 packloadall                       " load all packages in the start directory
 packadd cfilter
