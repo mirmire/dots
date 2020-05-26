@@ -107,6 +107,7 @@ set statusline+=%1*\ %t\ %*                 " file name (tail) of the buffer
 set statusline+=%2*\ %y\ %*                 " type of the file in the buffer
 set statusline+=%6*\ [buf:%n]\ %*           " buffer number
 set statusline+=%4*\ [%{LinterStatus()}]\ %* " warning and error count
+set statusline+=%{gutentags#statusline()}
 set statusline+=%4*\ %=%<%{getcwd()}\ %*    " separation and pwd
 set statusline+=%3*\ %m%r\ %*               " modified flag and read only flag
 set statusline+=%4*\ %c\ %*                 " column number
