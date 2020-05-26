@@ -48,6 +48,7 @@ let mapleader = '-'
 nnoremap <leader>b :ls<cr>:b<space>
 nnoremap <leader>v :ls<cr>:vertical rightbelow sb<space>
 nnoremap <leader>s :ls<cr>:sb<space>
+nnoremap <leader>x :close<cr>
 
 " map up and down key for Ctrl-p and Ctrl-n
 cnoremap <C-p> <Up>
@@ -133,7 +134,7 @@ vnoremap <Space> zf
 
 set backspace=indent,eol,start    " backspacing works for these
 
-set grepprg=rg\ --vimgrep
+set grepprg=rg\ --vimgrep\ --no-stats
 set grepformat=%f:%l:%c:%m,%f:%l:%m
 
 execute pathogen#infect()
