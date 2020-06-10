@@ -47,6 +47,7 @@ set history=5000
 let mapleader = '-'
 nnoremap <leader>b :ls<cr>:b<space>
 nnoremap <leader>v :ls<cr>:vertical rightbelow sb<space>
+nnoremap <leader>V :vertical rightbelow wincmd f<CR>
 nnoremap <leader>s :ls<cr>:sb<space>
 nnoremap <leader>x :close<cr>
 
