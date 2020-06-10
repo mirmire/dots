@@ -140,6 +140,8 @@ set grepformat=%f:%l:%c:%m,%f:%l:%m
 
 execute pathogen#infect()
 
+filetype plugin on
 packloadall                       " load all packages in the start directory
-packadd cfilter
+packadd! cfilter
+packadd! matchit
 silent! helptags ALL              " generate helptags
