@@ -47,8 +47,11 @@ set history=5000
 let mapleader = '-'
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 nnoremap <leader>v :vertical rightbelow wincmd f<CR>
-nnoremap <leader>w <C-w>
 nnoremap <leader>x :close<cr>
 
 " map up and down key for Ctrl-p and Ctrl-n
