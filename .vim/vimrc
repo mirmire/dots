@@ -48,6 +48,7 @@ let mapleader = '-'
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>c :pclose<CR>
 nnoremap <leader>f :Files<CR>
+nnoremap <leader>g 1z=<CR>
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
@@ -67,6 +68,11 @@ set scrolloff=3                 " keep 3 top and bottom line when scrolling
 set list
 set listchars=tab:→\ ,trail:•,nbsp:•
 let &showbreak='↪ '             " wrapped lines
+
+set spell
+set spelllang=en_us
+highlight SpellBad ctermfg=white ctermbg=red
+highlight SpellLocal cterm=standout
 
 highlight ColorColumn ctermbg=darkred
 if expand('%:t') ==# 'COMMIT_EDITMSG'
