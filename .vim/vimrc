@@ -82,17 +82,15 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 augroup vimrc
     autocmd!
+    autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
+    autocmd FileType groovy setlocal colorcolumn=100
+    autocmd BufNewFile,BufRead *.py setlocal keywordprg=pydoc3
 augroup END
-
-autocmd vimrc FileType yaml setlocal tabstop=2 shiftwidth=2
-autocmd vimrc FileType groovy setlocal colorcolumn=100
-autocmd vimrc BufNewFile,BufRead *.py setlocal keywordprg=pydoc3
 
 augroup quickfix
     autocmd!
+    autocmd QuickFixCmdPost *grep* cwindow
 augroup END
-
-autocmd quickfix QuickFixCmdPost *grep* cwindow
 
 set noruler
 set laststatus=2
